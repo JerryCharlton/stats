@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Townhouse - Market Watch Report - September 10, 2026</title>
+<title>Townhouse - Market Watch Report - September 11, 2026</title>
 <style>
   .mwr-page { font-family: 'Segoe UI', Arial, sans-serif; background:#fff; padding:24px; color:#222222; }
   .mwr-card { max-width: 980px; margin:0 auto; }
@@ -12,6 +12,9 @@
   .mwr-card table { width:100%; border-collapse:collapse; font-size:14px; }
   .mwr-card th { background:#005B96; color:#fff; text-align:center; padding:8px 10px; font-size:13px; font-weight:700; border:1px solid #CCCCCC; }
   .mwr-card th.mwr-left { text-align:left; }
+  .mwr-card th.mwr-sortable { cursor:pointer; user-select:none; }
+  .mwr-card th.mwr-sorted-asc::after { content:" \25B2"; }
+  .mwr-card th.mwr-sorted-desc::after { content:" \25BC"; }
   .mwr-card td { padding:7px 10px; text-align:center; color:#222222; border:1px solid #CCCCCC; }
   .mwr-card td.mwr-left { text-align:left; }
   .mwr-card tr:nth-child(even) td { background:#E5E5E5; }
@@ -25,22 +28,67 @@
 <div class="mwr-page">
 <div class="mwr-card">
 
-  <h1>Townhouse - Market Watch Report - September 10, 2026</h1>
+  <h1>Townhouse - Market Watch Report - September 11, 2026</h1>
   <h2>Townhouse Market by Price Range</h2>
 
   <div class="mwr-table-wrap">
-    <table>
-      <tr><th class="mwr-left">Price Range</th><th>Active</th><th>Sold Last 30 Days</th><th>% Sold</th><th>MOS</th><th>Pending</th></tr>
-      <tr><td class="mwr-left">$0 - $100K</td><td>0</td><td>0</td><td>N/A</td><td>N/A</td><td>0</td></tr><tr><td class="mwr-left">$100K - $200K</td><td>6</td><td>2</td><td>33%</td><td>3.0</td><td>2</td></tr><tr><td class="mwr-left">$200K - $300K</td><td>102</td><td>31</td><td>30%</td><td>3.3</td><td>9</td></tr><tr><td class="mwr-left">$300K - $400K</td><td>279</td><td>80</td><td>29%</td><td>3.5</td><td>41</td></tr><tr><td class="mwr-left">$400K - $500K</td><td>334</td><td>85</td><td>25%</td><td>3.9</td><td>30</td></tr><tr><td class="mwr-left">$500K - $600K</td><td>145</td><td>25</td><td>17%</td><td>5.8</td><td>18</td></tr><tr><td class="mwr-left">$600K - $700K</td><td>55</td><td>21</td><td>38%</td><td>2.6</td><td>7</td></tr><tr><td class="mwr-left">$700K - $800K</td><td>35</td><td>5</td><td>14%</td><td>7.0</td><td>2</td></tr><tr><td class="mwr-left">$800K - $900K</td><td>17</td><td>2</td><td>12%</td><td>8.5</td><td>2</td></tr><tr><td class="mwr-left">$900K - $1M</td><td>4</td><td>1</td><td>25%</td><td>4.0</td><td>0</td></tr><tr><td class="mwr-left">$1M - $1.5M</td><td>8</td><td>3</td><td>38%</td><td>2.7</td><td>0</td></tr><tr><td class="mwr-left">Over $1.5M</td><td>8</td><td>1</td><td>12%</td><td>8.0</td><td>0</td></tr>
-      <tr class="mwr-total"><td class="mwr-left">Total Market</td><td>993</td><td>256</td><td>26%</td><td>3.9</td><td>111</td></tr>
+    <table class="mwr-sortable-table">
+      <thead>
+      <tr>
+        <th class="mwr-left mwr-sortable mwr-sorted-asc" data-col="0" data-type="num">Price Range</th>
+        <th class="mwr-sortable" data-col="1" data-type="num">Active</th>
+        <th class="mwr-sortable" data-col="2" data-type="num">Sold Last 30 Days</th>
+        <th class="mwr-sortable" data-col="3" data-type="num">% Sold</th>
+        <th class="mwr-sortable" data-col="4" data-type="num">MOS</th>
+        <th class="mwr-sortable" data-col="5" data-type="num">Pending</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td class="mwr-left" data-v="0">$0 - $100K</td><td data-v="0">0</td><td data-v="0">0</td><td data-v="-1">N/A</td><td data-v="-1">N/A</td><td data-v="0">0</td></tr><tr><td class="mwr-left" data-v="1">$100K - $200K</td><td data-v="6">6</td><td data-v="1">1</td><td data-v="17">17%</td><td data-v="6.0">6.0</td><td data-v="2">2</td></tr><tr><td class="mwr-left" data-v="2">$200K - $300K</td><td data-v="103">103</td><td data-v="31">31</td><td data-v="30">30%</td><td data-v="3.3">3.3</td><td data-v="9">9</td></tr><tr><td class="mwr-left" data-v="3">$300K - $400K</td><td data-v="289">289</td><td data-v="83">83</td><td data-v="29">29%</td><td data-v="3.5">3.5</td><td data-v="40">40</td></tr><tr><td class="mwr-left" data-v="4">$400K - $500K</td><td data-v="339">339</td><td data-v="89">89</td><td data-v="26">26%</td><td data-v="3.8">3.8</td><td data-v="27">27</td></tr><tr><td class="mwr-left" data-v="5">$500K - $600K</td><td data-v="149">149</td><td data-v="25">25</td><td data-v="17">17%</td><td data-v="6.0">6.0</td><td data-v="16">16</td></tr><tr><td class="mwr-left" data-v="6">$600K - $700K</td><td data-v="57">57</td><td data-v="20">20</td><td data-v="35">35%</td><td data-v="2.9">2.9</td><td data-v="6">6</td></tr><tr><td class="mwr-left" data-v="7">$700K - $800K</td><td data-v="36">36</td><td data-v="5">5</td><td data-v="14">14%</td><td data-v="7.2">7.2</td><td data-v="2">2</td></tr><tr><td class="mwr-left" data-v="8">$800K - $900K</td><td data-v="17">17</td><td data-v="3">3</td><td data-v="18">18%</td><td data-v="5.7">5.7</td><td data-v="1">1</td></tr><tr><td class="mwr-left" data-v="9">$900K - $1M</td><td data-v="4">4</td><td data-v="1">1</td><td data-v="25">25%</td><td data-v="4.0">4.0</td><td data-v="0">0</td></tr><tr><td class="mwr-left" data-v="10">$1M - $1.5M</td><td data-v="8">8</td><td data-v="3">3</td><td data-v="38">38%</td><td data-v="2.7">2.7</td><td data-v="0">0</td></tr><tr><td class="mwr-left" data-v="11">Over $1.5M</td><td data-v="8">8</td><td data-v="0">0</td><td data-v="0">0%</td><td data-v="-1">N/A</td><td data-v="0">0</td></tr>
+      </tbody>
+      <tfoot>
+      <tr class="mwr-total"><td class="mwr-left">Total Market</td><td>1,016</td><td>261</td><td>26%</td><td>3.9</td><td>103</td></tr>
+      </tfoot>
     </table>
   </div>
 
-  <div class="mwr-note">MOS = Months of Supply (Active Listings &divide; Sold Last 30 Days). Balanced market = 3 months.</div>
+  <div class="mwr-note">MOS = Months of Supply (Active Listings &divide; Sold Last 30 Days). Balanced market = 3 months. Click a column heading to sort.</div>
 
   <div class="mwr-footer">Jerry Charlton - Exp Realty - 403 831 0842 - Jerry@JerryCharlton.com - www.JerryCharlton.com</div>
 
 </div>
 </div>
+
+<script>
+(function() {
+  document.querySelectorAll('table.mwr-sortable-table').forEach(function(table) {
+    var tbody = table.tBodies[0];
+    var headers = table.querySelectorAll('thead th.mwr-sortable');
+    var currentCol = 0, currentDir = 1;
+
+    function sortRows(col, dir) {
+      var rows = Array.prototype.slice.call(tbody.rows);
+      rows.sort(function(a, b) {
+        var av = parseFloat(a.cells[col].getAttribute('data-v'));
+        var bv = parseFloat(b.cells[col].getAttribute('data-v'));
+        return (av - bv) * dir;
+      });
+      rows.forEach(function(r) { tbody.appendChild(r); });
+    }
+
+    headers.forEach(function(h) {
+      h.addEventListener('click', function() {
+        var col = parseInt(h.getAttribute('data-col'), 10);
+        var dir = (col === currentCol) ? -currentDir : -1;
+        currentCol = col; currentDir = dir;
+        headers.forEach(function(hh) { hh.classList.remove('mwr-sorted-asc', 'mwr-sorted-desc'); });
+        h.classList.add(dir === 1 ? 'mwr-sorted-asc' : 'mwr-sorted-desc');
+        sortRows(col, dir);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
